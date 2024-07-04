@@ -4,32 +4,29 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
+const port = 3000;
+
 app.use(bodyParser.json());
 app.use(cors());
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/eventplanner', {});
+mongoose.connect('mongodb://localhost:27017/cbt_eventplanner360', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
-// Check connection
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
     console.log('Connected to MongoDB');
 });
 
-// Define a simple route
 app.get('/', (req, res) => {
-    res.send('Welcome to EventPlanner360 API');
+    res.send('Welcome to CBT EventPlanner360 API');
 });
 
-// Define your routes here
 const eventRoutes = require('./routes/events');
 app.use('/api/events', eventRoutes);
 
-// Start the server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
-
-
