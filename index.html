@@ -1,140 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EventPlanner360</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+  
+
+
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>EventPlanner360</h1>
-            <nav>
-                <ul>
-                    <li><a href="#" onclick="showSection('home')">Home</a></li>
-                    <li><a href="#" onclick="showSection('createEvent')">Create Event</a></li>
-                    <li><a href="#" onclick="showSection('guestList')">Guest List</a></li>
-                    <li><a href="#" onclick="showSection('budgetTracking')">Budget Tracking</a></li>
-                    <li><a href="#" onclick="showSection('vendorCoordination')">Vendor Coordination</a></li>
-                    <li><a href="#" onclick="showSection('scheduling')">Scheduling</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header class="header">
+        <a href="#" class="logo"><span>E</span>ventPlanner 360</a>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#service">service</a>
+            <a href="#about">about</a>
+            <a href="#gallery">gallery</a>
+            <a href="#price">price</a>
+            <a href="#reviews">reviews</a>
+            <a href="#contact">contact</a>
+
+        </nav>
+        <div id="menu-bars" class="fas fa-bars"></div>
     </header>
-
-    <main>
-        <section id="home" class="section">
-            <h2>Welcome to EventPlanner360</h2>
-            <p>Your all-in-one event management solution!</p>
-            <!-- Add image here -->
-            <img src="./images/about.jpg" alt="Welcome Image">
-        </section>
-
-        <section id="createEvent" class="section" style="display:none;">
-            <h2>Create Event</h2>
-            <button onclick="openModal('createEventModal')">Create New Event</button>
-        </section>
-
-        <section id="guestList" class="section" style="display:none;">
-            <h2>Guest List</h2>
-            <button onclick="openModal('guestListModal')">Manage Guests</button>
-        </section>
-
-        <section id="budgetTracking" class="section" style="display:none;">
-            <h2>Budget Tracking</h2>
-            <button onclick="openModal('budgetTrackingModal')">Track Budget</button>
-        </section>
-
-        <section id="vendorCoordination" class="section" style="display:none;">
-            <h2>Vendor Coordination</h2>
-            <button onclick="openModal('vendorCoordinationModal')">Coordinate Vendors</button>
-        </section>
-
-        <section id="scheduling" class="section" style="display:none;">
-            <h2>Scheduling</h2>
-            <button onclick="openModal('schedulingModal')">Manage Schedule</button>
-        </section>
-    </main>
-
-    <!-- Modals -->
-    <div id="createEventModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('createEventModal')">&times;</span>
-            <h2>Create New Event</h2>
-            <form>
-                <label for="eventName">Event Name:</label>
-                <input type="text" id="eventName" name="eventName" required>
-                <label for="eventDate">Event Date:</label>
-                <input type="date" id="eventDate" name="eventDate" required>
-                <label for="eventType">Event Type:</label>
-                <select id="eventType" name="eventType">
-                    <option value="conference">Conference</option>
-                    <option value="wedding">Wedding</option>
-                    <option value="party">Party</option>
-                </select>
-                <button type="submit">Create Event</button>
-            </form>
+    <section class="home" id="home">
+        <div class="content">
+            <h3> its time to celebrate the best<span>event organizers</span></h3>
+            <a href="#" class="btn">contact us</a>
         </div>
-    </div>
-
-    <div id="guestListModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('guestListModal')">&times;</span>
-            <h2>Manage Guests</h2>
-            <form>
-                <label for="guestName">Guest Name:</label>
-                <input type="text" id="guestName" name="guestName" required>
-                <label for="guestEmail">Guest Email:</label>
-                <input type="email" id="guestEmail" name="guestEmail" required>
-                <button type="submit">Add Guest</button>
-            </form>
+        <div class="swiper mySwiper home-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="https://img.freepik.com/free-photo/happy-wedding-couple-como-lake-italy_1328-3335.jpg?t=st=1720157164~exp=1720160764~hmac=abea80bfe25cb4aa12e1afe75e8b1ff0f4fc452132f45176445947ea18888307&w=360" alt=""></div>
+                <div class="swiper-slide"> <img src="https://img.freepik.com/premium-photo/female-hand-cloud-yellow-dry-holi-paint_172420-2592.jpg?w=360" alt=""></div>
+                <div class="swiper-slide"> <img src="https://img.freepik.com/free-photo/front-view-engaged-crowd-smiley-dj_23-2148325420.jpg?t=st=1720157519~exp=1720161119~hmac=6a1c1685b48be9607de6d24db6bc7534a8008ff263ec1398f5e8fb4bfc3f9662&w=360" alt=""></div>
+                <div class="swiper-slide"> <img src="https://img.freepik.com/free-photo/three-women-celebrating-new-year-together_23-2147720506.jpg?t=st=1720159443~exp=1720163043~hmac=2a60ee62fe5077090ab1cb1cd1a8117ff02b8c8a52b7ba6a9a7a0d28dfc5de6b&w=360" alt=""></div>
+                <div class="swiper-slide"> <img src="https://img.freepik.com/free-photo/group-people-dancing-holi-colors_23-2148129154.jpg?t=st=1720159519~exp=1720163119~hmac=0fb0c355cae9a2d9e93285c559c02185660c984261eb72ac5015a7546fa0e10f&w=360" alt=""></div>
+                <div class="swiper-slide"> <img src="https://img.freepik.com/free-photo/celebration-deity-navratri_23-2151219950.jpg?t=st=1720159553~exp=1720163153~hmac=128b6228e39ccb3d7c38861233e204bc6d735f67e2437b19e7098a906ea4b446&w=360" alt=""></div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div id="budgetTrackingModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('budgetTrackingModal')">&times;</span>
-            <h2>Track Budget</h2>
-            <form>
-                <label for="item">Item:</label>
-                <input type="text" id="item" name="item" required>
-                <label for="cost">Cost:</label>
-                <input type="number" id="cost" name="cost" required>
-                <button type="submit">Add to Budget</button>
-            </form>
+    <section class="service" id="service">
+        <h1 class="heading"> our <span>services</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-calendar-plus"></i>
+                <h3><a href="event-creation.html">Event creation</a></h3>
+                <p>Streamline your event planning with easy-to-use event creation tools, tailored for conferences, weddings, and parties.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-users"></i>
+                <h3><a href="guest-list-management.html">guest list management</a></h3>
+                <p>Efficiently manage your guest lists with features for adding, organizing, and tracking attendees.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-dollar-sign"></i>
+                <h3><a href="budget-tracking.html">budget tracking</a></h3>
+                <p>Keep track of your event expenses and stay within budget with our comprehensive budget tracking tools.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-handshake"></i>
+                <h3><a href="vendor-coordination.html">vendor coordination</a></h3>
+                <p>Coordinate seamlessly with vendors to ensure all aspects of your event are covered, from catering to entertainment.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-calendar-alt"></i>
+                <h3><a href="scheduling.html">scheduling</a></h3>
+                <p>Plan and schedule every detail of your event with our intuitive scheduling tools.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-file-alt"></i>
+                <h3><a href="personalized-event-pages.html">personalized event pages</a></h3>
+                <p>Create personalized event pages that provide all the necessary information and updates for your guests.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <h3><a href="invitation-management.html">invitation management</a></h3>
+                <p>Manage your invitations, send reminders, and track RSVPs with our integrated invitation management system.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-check"></i>
+                <h3><a href="rsvp-tracking.html">RSVP tracking</a></h3>
+                <p>Track RSVPs and manage guest responses in real-time to ensure an accurate headcount.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-credit-card"></i>
+                <h3><a href="payment-integration.html">payment integration</a></h3>
+                <p>Facilitate ticket sales and online transactions with secure payment gateway integrations.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div id="vendorCoordinationModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('vendorCoordinationModal')">&times;</span>
-            <h2>Coordinate Vendors</h2>
-            <form>
-                <label for="vendorName">Vendor Name:</label>
-                <input type="text" id="vendorName" name="vendorName" required>
-                <label for="vendorService">Service Provided:</label>
-                <input type="text" id="vendorService" name="vendorService" required>
-                <button type="submit">Add Vendor</button>
-            </form>
+    <section class="about" id="about">
+        <h1 class="heading"><span>about</span> us</h1>
+        <div class="row">
+            <div class="image">
+                <img src="https://img.freepik.com/free-photo/people-enjoying-movie-night_23-2149307376.jpg?t=st=1720163926~exp=1720167526~hmac=2180601a0e2511f32346f5d3df65bce49af5a3852d5ac8174e8360595fada298&w=740" alt="">
+            </div>
+            <div class="contents">
+                <h1 class="main-title">we will give a very special celebration for you</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptates est ullam quam magnam omnis maxime enim ea voluptatem qui. Delectus error recusandae facere quod earum. Consectetur repellat quidem voluptates.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam sed aut quisquam quas dolorem et corporis ullam fugiat esse, repellendus doloribus alias doloremque placeat impedit dolorum nemo blanditiis, nesciunt amet!</p>
+                <a href="#" class="btn">contact us</a>
+            </div>
         </div>
-    </div>
-
-    <div id="schedulingModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('schedulingModal')">&times;</span>
-            <h2>Manage Schedule</h2>
-            <form>
-                <label for="task">Task:</label>
-                <input type="text" id="task" name="task" required>
-                <label for="scheduleDate">Date:</label>
-                <input type="date" id="scheduleDate" name="scheduleDate" required>
-                <button type="submit">Add to Schedule</button>
-            </form>
+    </section>
+    
+    <section class="gallery" id="gallery">
+        <h1 class="heading">our <span>gallery</span></h1>
+        <div class="box-container">
+            <div class="row">
+                <div class="image-item">
+                    <img src="https://img.freepik.com/free-photo/medium-shot-friends-posing-together-photobooth_23-2150171679.jpg?t=st=1720168429~exp=1720172029~hmac=e483d51540b1ba2be03c6ab30707fd200e1a8fd45be9a8d3dd9cff775ed93e80&w=360" alt="">
+                    <h3 class="title">Photos and Events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+    
+                <div class="image-item">
+                    <img src="https://img.freepik.com/free-photo/celebration-navratri-deity_23-2151219979.jpg?t=st=1720171589~exp=1720175189~hmac=5422eab1af34eac827e28ec1472c1c952762678426042b75a930e0abe1c386ad&w=360" alt="">
+                    <h3 class="title">Photos and Events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+    
+                <div class="image-item">
+                    <img src="https://img.freepik.com/premium-photo/essence-community-neighborhood-activities-holiday-celebrations-captivating-photos_1020495-156078.jpg?w=360" alt="">
+                    <h3 class="title">Photos and Events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="image-item">
+                    <img src="https://img.freepik.com/free-photo/happy-smiling-family-studio-background-christmas-tree-with-gift_1328-2083.jpg?t=st=1720171678~exp=1720175278~hmac=fc766b88fed2a8bfab6d50bb80aeb8047fd18ee11f0ad8ed03fb148e3f3e5b67&w=360" alt="">
+                    <h3 class="title">Photos and Events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+    
+                <div class="image-item">
+                    <img src="https://img.freepik.com/premium-photo/band-with-crowd-people-stage-with-red-light-them_1236212-30802.jpg?w=360" alt="">
+                    <h3 class="title">Photos and Events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+    
+                <div class="image-item">
+                    <img src="https://img.freepik.com/free-photo/nightlife-with-people-dancing-club_23-2149052668.jpg?t=st=1720170563~exp=1720174163~hmac=5652e4a12bef8334f92ed1f19be11c780daf8c8bc3637b70f9c45a3abc47c618&w=740" alt="">
+                    <h3 class="title">Photos and Events</h3>
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+    
 
-    <script src="script.js"></script>
+    
+    <section class="price" id="price">
+        <h1 class="heading"> our <span>price</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <h3 class="title"> for birthday</h3>
+                <h3 class="amount">$250.99</h3>
+                <ul>
+                    <li><i class="fas fa-chcek"></i>full services</li>
+                    <li><i class="fas fa-chcek"></i> decorations </li>
+                    <li><i class="fas fa-chcek"></i> music and photos </li>
+                    <li><i class="fas fa-chcek"></i>food and drinks </li>
+                    <li><i class="fas fa-chcek"></i>invitation card</li>
+                </ul>
+                <a href="#" class="btn">check out</a>
+            </div>
+            <div class="box">
+                <h3 class="title"> for wedding</h3>
+                <h3 class="amount">$450.99</h3>
+                <ul>
+                    <li><i class="fas fa-chcek"></i>full services</li>
+                    <li><i class="fas fa-chcek"></i> decorations </li>
+                    <li><i class="fas fa-chcek"></i> music and photos </li>
+                    <li><i class="fas fa-chcek"></i>food and drinks </li>
+                    <li><i class="fas fa-chcek"></i>invitation card</li>
+                </ul>
+                <a href="#" class="btn">check out</a>
+            </div>
+            <div class="box">
+                <h3 class="title"> for concerts</h3>
+                <h3 class="amount">$650.99</h3>
+                <ul>
+                    <li><i class="fas fa-chcek"></i>full services</li>
+                    <li><i class="fas fa-chcek"></i> decorations </li>
+                    <li><i class="fas fa-chcek"></i> music and photos </li>
+                    <li><i class="fas fa-chcek"></i>food and drinks </li>
+                    <li><i class="fas fa-chcek"></i>invitation card</li>
+                </ul>
+                <a href="#" class="btn">check out</a>
+            </div>
+            <div class="box">
+                <h3 class="title"> for others</h3>
+                <h3 class="amount">$850.99</h3>
+                <ul>
+                    <li><i class="fas fa-chcek"></i>full services</li>
+                    <li><i class="fas fa-chcek"></i> decorations </li>
+                    <li><i class="fas fa-chcek"></i> music and photos </li>
+                    <li><i class="fas fa-chcek"></i>food and drinks </li>
+                    <li><i class="fas fa-chcek"></i>invitation card</li>
+                </ul>
+                <a href="#" class="btn">check out</a>
+            </div>
+        </div>
+    </section>
+    <section class="review" id="review">
+        <h1 class="heading">client's <span>review</span></h1>
+        <div class="review-container">
+            <div class="box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="https://img.freepik.com/free-photo/happy-young-woman-standing-front-metallic-texture-background_23-2148204716.jpg?t=st=1720175472~exp=1720179072~hmac=5a94bef2458f8b52de9b87c907d2924b31ba36e62de8d682eece1ef12a0e81ce&w=740" alt="">
+                    <div class="user-info">
+                        <h3>Mithila jack</h3>
+                        <span>happy clients</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quaerat sit dolorum eius quam deserunt explicabo, enim, pariatur laudantium itaque nobis expedita labore asperiores exercitationem voluptatum nemo sunt hic et.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="https://img.freepik.com/free-photo/portrait-handsome-man_23-2150770959.jpg?t=st=1720175598~exp=1720179198~hmac=df1276b1df2231b096046377e893061d2ee46a8bc526962b1b7108b3e5021084&w=360" alt="">
+                    <div class="user-info">
+                        <h3>john deo</h3>
+                        <span>happy clients</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quaerat sit dolorum eius quam deserunt explicabo, enim, pariatur laudantium itaque nobis expedita labore asperiores exercitationem voluptatum nemo sunt hic et.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="https://img.freepik.com/free-photo/portrait-man-smiling-city_23-2150771129.jpg?t=st=1720175628~exp=1720179228~hmac=9764fd4ba1fb29fcb689113a3d6a8dbb960153d109ad9138488d7be9a8c69873&w=826" alt="">
+                    <div class="user-info">
+                        <h3>joey musk</h3>
+                        <span>happy clients</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quaerat sit dolorum eius quam deserunt explicabo, enim, pariatur laudantium itaque nobis expedita labore asperiores exercitationem voluptatum nemo sunt hic et.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="https://img.freepik.com/free-photo/portrait-smiling-plus-size-woman_23-2150165121.jpg?t=st=1720175688~exp=1720179288~hmac=6375bc676248063896c23dbde300f45f580014c7f3c0fdebe1e53417c3339423&w=360" alt="">
+                    <div class="user-info">
+                        <h3>hruta dick</h3>
+                        <span>happy clients</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quaerat sit dolorum eius quam deserunt explicabo, enim, pariatur laudantium itaque nobis expedita labore asperiores exercitationem voluptatum nemo sunt hic et.</p>
+            </div>
+        </div>
+    </section>
+
+   
+
+    
+            
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>contact</span> us </h1>
+        <form action="">
+            <div class="inputBox">
+                <input type="text" placeholder="name">
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="number">
+                <input type="text" placeholder="subject">
+            </div>
+            <textarea name="" placeholder="your message" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+    </section>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>branches</h3>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> pune</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> mumbai</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> delhi</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> thane</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> solapur</a>
+            </div>
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i> home</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> service</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> about</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> gallery</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> price</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> review</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> contact</a>
+            </div>
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#"><i class="fas fa-phone"></i> +123-456-7890</a>
+                <a href="#"><i class="fas fa-phone"></i> +123-456-0987</a>
+                <a href="#"><i class="fas fa-envelope"></i> shradha56@gmail.com</a>
+                <a href="#"><i class="fas fa-envelope"></i> abhish34@gmail.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> mumbai, india-400104</a>
+            </div>
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+                <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
+            </div>
+        </div>
+        <div class="credits">created by <span>miss.shradh h</span> | all rights reserved!</div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
+
+
+                   
+     
+          
+               
+          
+              
 
