@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Management | EventPlanner360</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="service-detail">
+        <h1>Invitation Management</h1>
+        <p>Manage your invitations, send reminders, and track RSVPs with our integrated invitation management system.</p>
+        
+        <!-- Invitation List Section -->
+        <section id="invitationList">
+            <h2>Invitations</h2>
+            <ul id="invitations">
+                <!-- List of invitations will be dynamically added here -->
+                <li>
+                    <h3>Wedding Invitation</h3>
+                    <p>Date: July 30, 2024</p>
+                    <p>Recipient: John Doe</p>
+                    <p>Status: Sent</p>
+                    <button class="sendReminderBtn">Send Reminder</button>
+                    <button class="viewRSVPBtn">View RSVPs</button>
+                </li>
+                <li>
+                    <h3>Birthday Party Invitation</h3>
+                    <p>Date: August 15, 2024</p>
+                    <p>Recipient: Jane Smith</p>
+                    <p>Status: Pending</p>
+                    <button class="sendReminderBtn">Send Reminder</button>
+                    <button class="viewRSVPBtn">View RSVPs</button>
+                </li>
+                <!-- Add more invitations as needed -->
+            </ul>
+        </section>
+        
+        <!-- RSVP Tracking Section -->
+        <section id="rsvpTracking">
+            <h2>RSVP Tracking</h2>
+            <ul id="rsvpList">
+                <!-- RSVP responses will be dynamically added here -->
+                <li>
+                    <h3>John Doe</h3>
+                    <p>RSVP: Attending</p>
+                </li>
+                <li>
+                    <h3>Jane Smith</h3>
+                    <p>RSVP: Not Attending</p>
+                </li>
+                <!-- Add more RSVPs as needed -->
+            </ul>
+        </section>
+        
+        <a href="services.html">Back to Services</a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

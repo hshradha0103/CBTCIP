@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest List Management | EventPlanner360</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .service-detail {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #333;
+        }
+
+        .service-detail h1 {
+            font-size: 2.5rem;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .service-detail p {
+            font-size: 1.6rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .service-detail h2 {
+            font-size: 2rem;
+            color: #555;
+            margin-top: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .service-detail ul {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .service-detail ul li {
+            font-size: 1.6rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .service-detail a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-detail a:hover {
+            background-color: #555;
+            border-color: #555;
+        }
+
+        /* Guest List Management Form and Table */
+        .guest-form {
+            margin-bottom: 20px;
+        }
+
+        .guest-form input[type="text"],
+        .guest-form input[type="email"],
+        .guest-form select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1.4rem;
+        }
+
+        .guest-form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .guest-form input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .guest-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .guest-table th,
+        .guest-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .guest-table th {
+            background-color: #f0f0f0;
+            font-size: 1.6rem;
+            color: #333;
+        }
+
+        .guest-table td {
+            font-size: 1.4rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="service-detail">
+        <h1>Guest List Management</h1>
+        <p>Efficiently manage your guest lists with features for adding, organizing, and tracking attendees.</p>
+        
+        <!-- Guest Form -->
+        <form class="guest-form" id="guestForm">
+            <label for="guestName">Name:</label>
+            <input type="text" id="guestName" name="guestName" required><br>
+            
+            <label for="guestEmail">Email:</label>
+            <input type="email" id="guestEmail" name="guestEmail" required><br>
+            
+            <label for="guestStatus">RSVP Status:</label>
+            <select id="guestStatus" name="guestStatus">
+                <option value="Attending">Attending</option>
+                <option value="Not Attending">Not Attending</option>
+                <option value="Pending">Pending</option>
+            </select><br>
+            
+            <input type="submit" value="Add Guest">
+        </form>
+        
+        <!-- Guest List Table -->
+        <table class="guest-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>RSVP Status</th>
+                </tr>
+            </thead>
+            <tbody id="guestList">
+                <!-- Guests will be dynamically added here -->
+            </tbody>
+        </table>
+        
+        <a href="services.html">Back to Services</a>
+    </section>
+
+    <script>
+        // JavaScript for handling guest list form submission and display
+        document.getElementById('guestForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get form values
+            var guestName = document.getElementById('guestName').value;
+            var guestEmail = document.getElementById('guestEmail').value;
+            var guestStatus = document.getElementById('guestStatus').value;
+            
+            // Create new table row
+            var newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${guestName}</td>
+                <td>${guestEmail}</td>
+                <td>${guestStatus}</td>
+            `;
+            
+            // Append new row to guest list table
+            document.getElementById('guestList').appendChild(newRow);
+            
+            // Reset form fields
+            document.getElementById('guestForm').reset();
+        });
+    </script>
+</body>
+</html>

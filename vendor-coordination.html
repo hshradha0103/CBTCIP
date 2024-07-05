@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Coordination | EventPlanner360</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .service-detail {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #333;
+        }
+
+        .service-detail h1 {
+            font-size: 2.5rem;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .service-detail p {
+            font-size: 1.6rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .service-detail h2 {
+            font-size: 2rem;
+            color: #555;
+            margin-top: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .service-detail ul {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .service-detail ul li {
+            font-size: 1.6rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .service-detail a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-detail a:hover {
+            background-color: #555;
+            border-color: #555;
+        }
+
+        /* Vendor Coordination Form and Table */
+        .vendor-form {
+            margin-bottom: 20px;
+        }
+
+        .vendor-form input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1.4rem;
+        }
+
+        .vendor-form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .vendor-form input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .vendor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .vendor-table th,
+        .vendor-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .vendor-table th {
+            background-color: #f0f0f0;
+            font-size: 1.6rem;
+            color: #333;
+        }
+
+        .vendor-table td {
+            font-size: 1.4rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="service-detail">
+        <h1>Vendor Coordination</h1>
+        <p>Coordinate seamlessly with vendors to ensure all aspects of your event are covered, from catering to entertainment.</p>
+        
+        <!-- Vendor Form -->
+        <form class="vendor-form" id="vendorForm">
+            <label for="vendorName">Vendor Name:</label>
+            <input type="text" id="vendorName" name="vendorName" required><br>
+            
+            <label for="vendorService">Service Provided:</label>
+            <input type="text" id="vendorService" name="vendorService" required><br>
+            
+            <input type="submit" value="Add Vendor">
+        </form>
+        
+        <!-- Vendor Table -->
+        <table class="vendor-table">
+            <thead>
+                <tr>
+                    <th>Vendor Name</th>
+                    <th>Service Provided</th>
+                </tr>
+            </thead>
+            <tbody id="vendorList">
+                <!-- Vendors will be dynamically added here -->
+            </tbody>
+        </table>
+        
+        <a href="services.html">Back to Services</a>
+    </section>
+
+    <script>
+        // JavaScript for handling vendor coordination form submission and display
+        document.getElementById('vendorForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get form values
+            var vendorName = document.getElementById('vendorName').value;
+            var vendorService = document.getElementById('vendorService').value;
+            
+            // Create new table row
+            var newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${vendorName}</td>
+                <td>${vendorService}</td>
+            `;
+            
+            // Append new row to vendor list table
+            document.getElementById('vendorList').appendChild(newRow);
+            
+            // Reset form fields
+            document.getElementById('vendorForm').reset();
+        });
+    </script>
+</body>
+</html>

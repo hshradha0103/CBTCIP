@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Event Pages | EventPlanner360</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="service-detail">
+        <h1>Personalized Event Pages</h1>
+        <p>Create personalized event pages that provide all the necessary information and updates for your guests.</p>
+        
+        <!-- Event Details Section -->
+        <section id="eventDetails">
+            <h2>Event Details</h2>
+            <div>
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" name="eventName" placeholder="Enter event name">
+            </div>
+            <div>
+                <label for="eventDate">Event Date:</label>
+                <input type="date" id="eventDate" name="eventDate">
+            </div>
+            <div>
+                <label for="eventLocation">Event Location:</label>
+                <input type="text" id="eventLocation" name="eventLocation" placeholder="Enter event location">
+            </div>
+            <div>
+                <label for="eventDescription">Event Description:</label>
+                <textarea id="eventDescription" name="eventDescription" rows="4" placeholder="Enter event description"></textarea>
+            </div>
+        </section>
+        
+        <!-- Guest Information Section -->
+        <section id="guestInformation">
+            <h2>Guest Information</h2>
+            <div>
+                <label for="guestName">Guest Name:</label>
+                <input type="text" id="guestName" name="guestName" placeholder="Enter guest name">
+            </div>
+            <div>
+                <label for="guestEmail">Guest Email:</label>
+                <input type="email" id="guestEmail" name="guestEmail" placeholder="Enter guest email">
+            </div>
+            <div>
+                <label for="guestRSVP">RSVP Response:</label>
+                <select id="guestRSVP" name="guestRSVP">
+                    <option value="yes">Yes, I will attend</option>
+                    <option value="no">No, I cannot attend</option>
+                    <option value="maybe">Maybe</option>
+                </select>
+            </div>
+        </section>
+        
+        <!-- RSVP Tracking Section -->
+        <section id="rsvpTracking">
+            <h2>RSVP Tracking</h2>
+            <ul id="rsvpList">
+                <!-- RSVP responses will be dynamically added here -->
+            </ul>
+        </section>
+        
+        <a href="services.html">Back to Services</a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

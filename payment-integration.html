@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Integration | EventPlanner360</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="service-detail">
+        <h1>Payment Integration</h1>
+        <p>Facilitate ticket sales and online transactions with secure payment gateway integrations.</p>
+        
+        <!-- Payment Form Section -->
+        <section id="paymentForm">
+            <h2>Make a Payment</h2>
+            <form action="process_payment.php" method="POST">
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" placeholder="Enter amount" required>
+                
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
+                
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+                
+                <button type="submit">Pay Now</button>
+            </form>
+        </section>
+        
+        <a href="services.html">Back to Services</a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
